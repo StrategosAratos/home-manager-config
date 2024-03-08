@@ -2,6 +2,17 @@
 
 {
   programs.zsh = {
+        initExtra = ''
+      [[ ! -f "${./p10k.zsh}" ]] || source ${./p10k.zsh}
+    '';
+    plugins = [
+      {
+        name = "powerlevel10k";
+        src = pkgs.zsh-powerlevel10k;
+        file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+      }
+    ];
+
     enable = true;
     enableCompletion = true;
     enableAutosuggestions = true;
@@ -16,10 +27,5 @@
     };
     history.size = 10000;
     history.path = "${config.xdg.dataHome}/zsh/history";
-    #oh-my-zsh = {
-    #  enable = true;
-    #  plugins = [ "git" "sudo" "rust" ];
-    #  theme = "agnoster";
-    #};
   };
 }

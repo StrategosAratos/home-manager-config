@@ -2,7 +2,8 @@
 
 {
   home.packages = with pkgs; [
-  zsh
+    zsh
+    kitty
     brave
     git
     ripgrep

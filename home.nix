@@ -6,7 +6,6 @@
       ./hyprland.nix
       ./waybar.nix
       ./zsh.nix
-      ./starship.nix
       ./packages.nix
       ./gtk.nix
     ];
