@@ -1,26 +1,24 @@
-{ inputs, pkgs, ... }:
-{
+{ inputs, pkgs, lib, ... }: {
   wayland.windowManager.hyprland = {
     enable = true;
 
-    extraConfig =
-   ''
-
+    extraConfig = let
+      mkBind = key: action: ''
+        bind=${key},${action}
+        bind=${key},submap,reset'';
+      resetSubmap = ''
+        bind=,Return,submap,reset
+        bind=,Escape,submap,reset
+        submap=reset
+      '';
+      # setup keybindings for launching applications
+    in lib.concatStrings [  ''
       submap=execute
-      bind=,Escape,submap,reset
-      bind=,w,exec,brave
-      bind=,w,submap,reset
-      bind=,e,exec,emacs
-      bind=,e,submap,reset
-      bind=,n,exec,$notes
-      bind=,n,submap,reset
-      bind=,f,exec,$fileManager
-      bind=,f,submap,reset
-      bind=,Return,submap,reset
-
-      submap=reset
-
-    '';
+      ${mkBind ",w" "exec,$browser"}
+      ${mkBind ",e" "exec,$editor"}
+      ${mkBind ",n" "exec,$notes"}
+      ${mkBind ",f" "exec,$fileManager"}
+    '' resetSubmap ];
 
     settings = {
       "$mod" = "SUPER";
@@ -30,26 +28,25 @@
       "$fileManager" = "pcmanfm";
       "$notes" = "obsidian";
       "$chat" = "element-desktop";
+      "$editor" = "emacs";
+      "$browser" = "brave";
 
-      exec-once = [
-        "hyprpaper"
-        "waybar"
-      ];
+      exec-once = [ "hyprpaper" "waybar" ];
 
-      monitor = ["eDP-1,1920x1080,0x0,1"];
+      monitor = [ "eDP-1,1920x1080,0x0,1" ];
 
       windowrulev2 = [
-       "opacity 0.96, class:.*" # make all windows 4% transparent
-       "opacity 1,title:^(.*)(YouTube)(.*)$" # if a window has "YouTube" in its title, remove transparency
+        "opacity 0.96, class:.*" # make all windows 4% transparent
+        "opacity 1,title:^(.*)(YouTube)(.*)$" # if a window has "YouTube" in its title, remove transparency
       ];
 
       input = {
         kb_layout = "us";
-        kb_options = "caps:escape,compose:menu";
+        kb_options = "caps:escape,compose:menu"; # override capslock with escape
 
         follow_mouse = 1;
 
-        touchpad = { natural_scroll = false; };
+        touchpad.natural_scroll = false;
 
         sensitivity = 0; # -1.0 - 1.0, 0 means no modification.
       };
@@ -108,7 +105,6 @@
         "$mod SHIFT, Q, exit,"
         "$mod SHIFT, Space,togglefloating,"
         "$mod, P, exec, $menu"
-        "$mod SHIFT, P, exec, $dmenu"
         "$mod SHIFT, P, pseudo,"
         "$mod SHIFT, J, togglesplit,"
         "$mod SHIFT, F, fullscreen"

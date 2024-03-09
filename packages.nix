@@ -24,5 +24,6 @@
     rustup
     starship
     clang_17
+    nodejs_21
   ];
 }

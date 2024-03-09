@@ -3,6 +3,7 @@
 {
   imports =
     [
+      ./doom.nix
       ./hyprland.nix
       ./waybar.nix
       ./zsh.nix
