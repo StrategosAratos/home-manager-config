@@ -25,5 +25,15 @@
     starship
     clang_17
     nodejs_21
+    evolution-ews
+    evolutionWithPlugins
+    keepassxc
+    ncmpcpp
+    helvum
+    cava
+    cli-visualizer
+    blender-hip
+    vorta
+    rocmPackages.clr
   ];
 }

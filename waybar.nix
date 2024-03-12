@@ -12,7 +12,7 @@
     modules-center = ["hyprland/window"];
     modules-right = [
       "idle_inhibitor"
-                     "pulseaudio"
+      "pulseaudio"
       "network"
       "cpu"
       "memory"
@@ -93,7 +93,7 @@
             "car" = "";
             "default" = ["" "" ""];
         };
-        "on-click" = "pavucontrol";
+        "on-click" = "helvum";
     };
   }];
   };

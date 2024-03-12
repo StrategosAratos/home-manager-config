@@ -9,7 +9,7 @@
       ./zsh.nix
       ./packages.nix
       ./gtk.nix
-      ./kitty.nix
+#      ./kitty.nix
     ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -61,6 +61,7 @@
   #
   home.sessionVariables = {
     # EDITOR = "emacs";
+      SSH_ASKPASS = "${pkgs.x11_ssh_askpass}/libexec/ssh-askpass";
   };
 
   programs.emacs = {
@@ -69,6 +70,22 @@
       pkgs.emacs; # replace with pkgs.emacs-gtk, or a version provided by the community overlay if desired.
   };
 
+  systemd.user.services.pulseaudio-pipewire-modules = {
+    Unit = {
+      Description = "Load pipewire-pulseaudio modules";
+    };
+    Install = {
+      WantedBy = [ "default.target" ];
+    };
+    Service = {
+      ExecStart = "${pkgs.writeShellScript "load-pulseaudio-pipewire-modules" ''
+        #!/run/current-system/sw/bin/bash
+        ${pkgs.pulseaudio}/bin/pactl load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1
+      ''}";
+    };
+  };
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
 }

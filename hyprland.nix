@@ -33,11 +33,16 @@
 
       exec-once = [ "hyprpaper" "waybar" ];
 
-      monitor = [ "eDP-1,1920x1080,0x0,1" ];
+      monitor = [
+                  "DP-3,1920x1080@60,0x0,1"
+                  "DP-2,1920x1080@60,1920x0,1"
+                  "DP-1,1920x1080@60,3840x0,1"
+                ];
 
       windowrulev2 = [
         "opacity 0.96, class:.*" # make all windows 4% transparent
         "opacity 1,title:^(.*)(YouTube)(.*)$" # if a window has "YouTube" in its title, remove transparency
+        "nomaximizerequest, class:.*" # You'll probably like this.
       ];
 
       input = {
