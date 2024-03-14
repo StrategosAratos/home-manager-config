@@ -35,5 +35,9 @@
     blender-hip
     vorta
     rocmPackages.clr
+    dex
+    clamav    
+    grimblast
+    evince
   ];
 }

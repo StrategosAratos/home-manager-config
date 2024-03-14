@@ -31,7 +31,7 @@
       "$editor" = "emacs";
       "$browser" = "brave";
 
-      exec-once = [ "hyprpaper" "waybar" ];
+      exec-once = ["dex -a" "hyprpaper" "waybar" ];
 
       monitor = [
                   "DP-3,1920x1080@60,0x0,1"
@@ -117,7 +117,7 @@
         "$mod, L, movefocus, r"
         "$mod, K, movefocus, u"
         "$mod, J, movefocus, d"
-        "$mod,Y,exec,grimshot copy area"
+        "$mod,Y,exec,grimblast copy area"
       ] ++ (
         # workspaces
         # binds $mod + [shift +] {1..10} to [move to] workspace {1..10}
