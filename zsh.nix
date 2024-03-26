@@ -2,16 +2,16 @@
 
 {
   programs.zsh = {
-        initExtra = ''
-      [[ ! -f "${./p10k.zsh}" ]] || source ${./p10k.zsh}
+    initExtra = ''
+       [[ ! -f "${./p10k.zsh}" ]] || source ${./p10k.zsh}
+       [[ ! -f "${~/.cargo/env}" ]] || source ${~/.cargo/env}
+       eval $(thefuck --alias)
     '';
-    plugins = [
-      {
-        name = "powerlevel10k";
-        src = pkgs.zsh-powerlevel10k;
-        file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
-      }
-    ];
+    plugins = [{
+      name = "powerlevel10k";
+      src = pkgs.zsh-powerlevel10k;
+      file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+    }];
 
     enable = true;
     enableCompletion = true;

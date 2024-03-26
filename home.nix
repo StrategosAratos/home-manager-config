@@ -9,7 +9,8 @@
       ./zsh.nix
       ./packages.nix
       ./gtk.nix
-#      ./kitty.nix
+      ./kitty.nix
+      ./digital-audio-workstation.nix
     ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.

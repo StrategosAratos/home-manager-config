@@ -39,5 +39,11 @@
     clamav    
     grimblast
     evince
+    sonic-pi
+    ymuse
+    cmake
+    gnumake
+    libtool
+    thefuck
   ];
 }

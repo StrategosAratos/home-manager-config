@@ -43,6 +43,8 @@
         "opacity 0.96, class:.*" # make all windows 4% transparent
         "opacity 1,title:^(.*)(YouTube)(.*)$" # if a window has "YouTube" in its title, remove transparency
         "nomaximizerequest, class:.*" # You'll probably like this.
+        "minsize 1 1 , title:^(),class:^(steam)"
+        "stayfocused,class:(steam),title:(^$)"
       ];
 
       input = {
@@ -59,9 +61,9 @@
       general = {
         # See https://wiki.hyprland.org/Configuring/Variables/ for more
 
-        gaps_in = 5;
+        gaps_in = 0;
         gaps_out = 20;
-        border_size = 2;
+        border_size = 1;
         "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
         "col.inactive_border" = "rgba(595959aa)";
 
@@ -74,7 +76,7 @@
       decoration = {
         # See https://wiki.hyprland.org/Configuring/Variables/ for more
 
-        rounding = 10;
+        rounding = 0;
 
         blur = {
           enabled = true;
@@ -84,7 +86,7 @@
           vibrancy = 0.1696;
         };
 
-        drop_shadow = true;
+        drop_shadow = false;
         shadow_range = 4;
         shadow_render_power = 3;
         "col.shadow" = "rgba(1a1a1aee)";
@@ -92,8 +94,7 @@
 
       dwindle = {
         # See https://wiki.hyprland.org/Configuring/Dwindle-Layout/ for more
-        pseudotile =
-          true; # master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
+        pseudotile = true;
         preserve_split = true; # you probably want this
       };
 
