@@ -19,6 +19,11 @@
     };
   };
 
+  home.pointerCursor = {
+    gtk.enable = true;
+    name = "Catppuccin-Frappe-Blue-Cursors";
+    package = pkgs.catppuccin-cursors.frappeBlue;
+  };
 
    xdg.configFile = {
   "gtk-4.0/assets".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/assets";

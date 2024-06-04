@@ -1,17 +1,17 @@
 { inputs, config, pkgs, ... }:
 
 {
-  imports =
-    [
-      ./doom.nix
-      ./hyprland.nix
-      ./waybar.nix
-      ./zsh.nix
-      ./packages.nix
-      ./gtk.nix
-      ./kitty.nix
-      ./digital-audio-workstation.nix
-    ];
+  imports = [
+    ./doom.nix
+    ./nvim.nix
+    ./hyprland.nix
+    ./waybar.nix
+    ./zsh.nix
+    ./packages.nix
+    ./gtk.nix
+    ./kitty.nix
+    ./digital-audio-workstation.nix
+  ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "mkr";
@@ -19,9 +19,7 @@
   wayland.windowManager.hyprland.enable = true;
   nixpkgs.config = {
     allowUnfree = true;
-    permittedInsecurePackages = [
-                "electron-25.9.0"
-              ];
+    permittedInsecurePackages = [ "electron-25.9.0" ];
   };
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -62,7 +60,7 @@
   #
   home.sessionVariables = {
     # EDITOR = "emacs";
-      SSH_ASKPASS = "${pkgs.x11_ssh_askpass}/libexec/ssh-askpass";
+    SSH_ASKPASS = "${pkgs.x11_ssh_askpass}/libexec/ssh-askpass";
   };
 
   programs.emacs = {
@@ -72,17 +70,19 @@
   };
 
   systemd.user.services.pulseaudio-pipewire-modules = {
-    Unit = {
-      Description = "Load pipewire-pulseaudio modules";
-    };
-    Install = {
-      WantedBy = [ "default.target" ];
-    };
+    Unit = { Description = "Load pipewire-pulseaudio modules"; };
+    Install = { WantedBy = [ "default.target" ]; };
     Service = {
       ExecStart = "${pkgs.writeShellScript "load-pulseaudio-pipewire-modules" ''
         #!/run/current-system/sw/bin/bash
         ${pkgs.pulseaudio}/bin/pactl load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1
       ''}";
+    };
+  };
+  dconf.settings = {
+    "org/virt-manager/virt-manager/connections" = {
+      autoconnect = [ "qemu:///system" ];
+      uris = [ "qemu:///system" ];
     };
   };
 

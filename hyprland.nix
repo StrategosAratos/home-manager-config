@@ -42,7 +42,8 @@
       windowrulev2 = [
         "opacity 0.96, class:.*" # make all windows 4% transparent
         "opacity 1,title:^(.*)(YouTube)(.*)$" # if a window has "YouTube" in its title, remove transparency
-        "nomaximizerequest, class:.*" # You'll probably like this.
+        "opacity 1,title:^FINAL FANTASY XIV$"
+        #"nomaximizerequest, class:.*" # You'll probably like this.
         "minsize 1 1 , title:^(),class:^(steam)"
         "stayfocused,class:(steam),title:(^$)"
       ];

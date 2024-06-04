@@ -11,7 +11,7 @@
     shellcheck
     pandoc
     texlive.combined.scheme-full
-    nixfmt
+    nixfmt-rfc-style
     pulseaudio
     element-desktop-wayland
     obsidian
@@ -24,7 +24,8 @@
     rustup
     starship
     clang_17
-    nodejs_21
+    clang-tools_17
+    nodejs_22
     evolution-ews
     evolutionWithPlugins
     keepassxc
@@ -45,5 +46,10 @@
     gnumake
     libtool
     thefuck
+    discord
+    typescript
+    yarn
+    godot_4
+    cmake-language-server
   ];
 }
