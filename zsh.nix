@@ -4,7 +4,7 @@
   programs.zsh = {
     initExtra = ''
        [[ ! -f "${./p10k.zsh}" ]] || source ${./p10k.zsh}
-       [[ ! -f "${~/.cargo/env}" ]] || source ${~/.cargo/env}
+       [[ ! -f "~/.cargo/env" ]] || source ~/.cargo/env
        eval $(thefuck --alias)
     '';
     plugins = [{
