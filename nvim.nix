@@ -10,7 +10,11 @@
       harpoon2
       telescope-nvim
       mason-nvim
-      mason-lspconfig-nvim      
+      mason-lspconfig-nvim 
+      nvim-treesitter-parsers.nix
     ];
+    extraConfig = ''
+      set number relativenumber
+    '';
   };
 }
