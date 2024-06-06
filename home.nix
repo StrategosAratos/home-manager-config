@@ -10,12 +10,11 @@
     ./packages.nix
     ./gtk.nix
     ./kitty.nix
-    ./digital-audio-workstation.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = "mkr";
-  home.homeDirectory = "/home/mkr";
+  home.username = "dni";
+  home.homeDirectory = "/home/dni";
   wayland.windowManager.hyprland.enable = true;
   nixpkgs.config = {
     allowUnfree = true;
@@ -28,7 +27,7 @@
   # You should not change this value, even if you update Home Manager. If you do
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
-  home.stateVersion = "23.11"; # Please read the comment before changing.
+  home.stateVersion = "24.05"; # Please read the comment before changing.
 
   # The home.packages option allows you to install Nix packages into your
 
@@ -69,22 +68,16 @@
       pkgs.emacs; # replace with pkgs.emacs-gtk, or a version provided by the community overlay if desired.
   };
 
-  systemd.user.services.pulseaudio-pipewire-modules = {
-    Unit = { Description = "Load pipewire-pulseaudio modules"; };
-    Install = { WantedBy = [ "default.target" ]; };
-    Service = {
-      ExecStart = "${pkgs.writeShellScript "load-pulseaudio-pipewire-modules" ''
-        #!/run/current-system/sw/bin/bash
-        ${pkgs.pulseaudio}/bin/pactl load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1
-      ''}";
-    };
-  };
-  dconf.settings = {
-    "org/virt-manager/virt-manager/connections" = {
-      autoconnect = [ "qemu:///system" ];
-      uris = [ "qemu:///system" ];
-    };
-  };
+#  systemd.user.services.pulseaudio-pipewire-modules = {
+#    Unit = { Description = "Load pipewire-pulseaudio modules"; };
+#    Install = { WantedBy = [ "default.target" ]; };
+#    Service = {
+#      ExecStart = "${pkgs.writeShellScript "load-pulseaudio-pipewire-modules" ''
+#        #!/run/current-system/sw/bin/bash
+#        ${pkgs.pulseaudio}/bin/pactl load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1
+#      ''}";
+#    };
+#  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

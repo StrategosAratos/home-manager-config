@@ -10,46 +10,29 @@
     fd
     shellcheck
     pandoc
-    texlive.combined.scheme-full
     nixfmt-rfc-style
     pulseaudio
     element-desktop-wayland
-    obsidian
+    trilium-desktop
     pcmanfm
     waybar
     wofi
-    jetbrains-toolbox
     hyprpaper
-    moonlight-qt
     rustup
-    starship
-    clang_17
-    clang-tools_17
     nodejs_22
-    evolution-ews
-    evolutionWithPlugins
+    thunderbird
     keepassxc
-    ncmpcpp
     helvum
     cava
     cli-visualizer
-    blender-hip
     vorta
-    rocmPackages.clr
     dex
-    clamav    
     grimblast
     evince
-    sonic-pi
-    ymuse
-    cmake
-    gnumake
-    libtool
-    thefuck
+    vlc
     discord
     typescript
     yarn
     godot_4
-    cmake-language-server
   ];
 }

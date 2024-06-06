@@ -49,7 +49,7 @@
       ];
 
       input = {
-        kb_layout = "us";
+        kb_layout = "de";
         kb_options = "caps:escape,compose:menu"; # override capslock with escape
 
         follow_mouse = 1;
