@@ -2,54 +2,57 @@
 
 {
   home.packages = with pkgs; [
-    zsh
-    kitty
+    spice-gtk
+    blender-hip
     brave
-    git
-    ripgrep
-    fd
-    shellcheck
-    pandoc
-    texlive.combined.scheme-full
-    nixfmt-rfc-style
-    pulseaudio
-    element-desktop-wayland
-    obsidian
-    pcmanfm
-    waybar
-    wofi
-    jetbrains-toolbox
-    hyprpaper
-    moonlight-qt
-    rustup
-    starship
-    clang_17
+    cava
+    clamav    
     clang-tools_17
-    nodejs_22
+    clang_17
+    cli-visualizer
+    cmake
+    cmake-language-server
+    dex
+    discord
+    element-desktop-wayland
+    evince
     evolution-ews
     evolutionWithPlugins
-    keepassxc
-    ncmpcpp
-    helvum
-    cava
-    cli-visualizer
-    blender-hip
-    vorta
-    rocmPackages.clr
-    dex
-    clamav    
-    grimblast
-    evince
-    sonic-pi
-    ymuse
-    cmake
+    fd
+    git
     gnumake
-    libtool
-    thefuck
-    discord
-    typescript
-    yarn
     godot_4
-    cmake-language-server
+    grimblast
+    helvum
+    hyprpaper
+    jetbrains-toolbox
+    keepassxc
+    kitty
+    libtool
+    moonlight-qt
+    ncmpcpp
+    nixfmt-rfc-style
+    nodejs_22
+    obsidian
+    pandoc
+    pcmanfm
+    pulseaudio
+    razergenie
+    ripgrep
+    rocmPackages.clr
+    rustup
+    shellcheck
+    sonic-pi
+    texlive.combined.scheme-full
+    thefuck
+    typescript
+    vorta
+    waybar
+    wofi
+    yarn
+    ymuse
+    zsh
+    nixd
+    steam
   ];
 }

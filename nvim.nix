@@ -6,15 +6,15 @@
     viAlias = true;
     vimAlias = true;
     plugins = with pkgs.vimPlugins; [
-      nvim-treesitter.withAllGrammars
       harpoon2
-      telescope-nvim
-      mason-nvim
       mason-lspconfig-nvim 
+      mason-nvim
+      nvim-lspconfig
       nvim-treesitter-parsers.nix
+      nvim-treesitter.withAllGrammars
+      telescope-nvim
     ];
-    extraConfig = ''
-      set number relativenumber
-    '';
-  };
+    extraConfig = builtins.readFile ./vim-extra-config.vim;
+    extraLuaConfig = builtins.readFile ./vim-extra-config.lua;
+    };
 }
