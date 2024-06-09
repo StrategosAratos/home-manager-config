@@ -63,6 +63,12 @@
     SSH_ASKPASS = "${pkgs.x11_ssh_askpass}/libexec/ssh-askpass";
   };
 
+  programs.git = {
+    enable = true;
+    userName = "Maximilian Kroboth";
+    userEmail = "maximilian@kroboth-home.at";
+  };
+
   programs.emacs = {
     enable = true;
     package =
