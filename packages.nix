@@ -12,15 +12,12 @@
     evince
     fd
     git
-    godot_4
     grimblast
     helvum
     hyprpaper
     keepassxc
     kitty
     nixfmt-rfc-style
-    nodejs_22
-    pandoc
     pcmanfm
     pulseaudio
     ripgrep
