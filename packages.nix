@@ -2,7 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    spice-gtk
+  sumneko-lua-language-server
     blender-hip
     brave
     cava
@@ -31,6 +31,7 @@
     libtool
     moonlight-qt
     ncmpcpp
+    nixd
     nixfmt-rfc-style
     nodejs_22
     obsidian
@@ -43,16 +44,18 @@
     rustup
     shellcheck
     sonic-pi
+    spice-gtk
+    steam
     texlive.combined.scheme-full
     thefuck
     typescript
+    unzip
     vorta
     waybar
+    wl-clipboard-rs
     wofi
     yarn
     ymuse
     zsh
-    nixd
-    steam
   ];
 }

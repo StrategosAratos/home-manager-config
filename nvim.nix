@@ -13,6 +13,8 @@
       nvim-treesitter-parsers.nix
       nvim-treesitter.withAllGrammars
       telescope-nvim
+      lazy-nvim
+      cmp-async-path
     ];
     extraConfig = builtins.readFile ./vim-extra-config.vim;
     extraLuaConfig = builtins.readFile ./vim-extra-config.lua;
