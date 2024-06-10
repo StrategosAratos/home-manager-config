@@ -1,4 +1,4 @@
-{ inputs, config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -62,6 +62,11 @@
     SSH_ASKPASS = "${pkgs.x11_ssh_askpass}/libexec/ssh-askpass";
   };
 
+programs.git = {
+	enable = true;
+	userName = "StrategosAratos";
+	userEmail = "davidnikischer@gmail.com";
+};
   programs.emacs = {
     enable = true;
     package =

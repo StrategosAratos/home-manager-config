@@ -2,37 +2,38 @@
 
 {
   home.packages = with pkgs; [
-    zsh
-    kitty
     brave
-    git
-    ripgrep
-    fd
-    shellcheck
-    pandoc
-    nixfmt-rfc-style
-    pulseaudio
+    cava
+    nixd
+    cli-visualizer
+    dex
+    discord
     element-desktop-wayland
-    trilium-desktop
+    evince
+    fd
+    git
+    godot_4
+    grimblast
+    helvum
+    hyprpaper
+    keepassxc
+    kitty
+    nixfmt-rfc-style
+    nodejs_22
+    pandoc
     pcmanfm
+    pulseaudio
+    ripgrep
+    rustup
+    shellcheck
+    thunderbird
+    trilium-desktop
+    typescript
+    vlc
+    vorta
     waybar
     wofi
-    hyprpaper
-    rustup
-    nodejs_22
-    thunderbird
-    keepassxc
-    helvum
-    cava
-    cli-visualizer
-    vorta
-    dex
-    grimblast
-    evince
-    vlc
-    discord
-    typescript
     yarn
-    godot_4
+    zsh
   ];
 }

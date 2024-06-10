@@ -13,8 +13,7 @@
       mason-lspconfig-nvim      
       nvim-treesitter-parsers.nix
     ];
-    extraConfig = ''
-      set number
-      '';
+  extraConfig = builtins.readFile ./vim-extra-config.vim;
+  extraLuaConfig = builtins.readFile ./vim-extra-config.lua;
   };
 }
