@@ -6,14 +6,17 @@
     viAlias = true;
     vimAlias = true;
     plugins = with pkgs.vimPlugins; [
-      nvim-treesitter.withAllGrammars
       harpoon2
-      telescope-nvim
+      mason-lspconfig-nvim 
       mason-nvim
-      mason-lspconfig-nvim      
+      nvim-lspconfig
       nvim-treesitter-parsers.nix
+      nvim-treesitter.withAllGrammars
+      telescope-nvim
+      lazy-nvim
+      cmp-async-path
     ];
-  extraConfig = builtins.readFile ./vim-extra-config.vim;
-  extraLuaConfig = builtins.readFile ./vim-extra-config.lua;
-  };
+    extraConfig = builtins.readFile ./vim-extra-config.vim;
+    extraLuaConfig = builtins.readFile ./vim-extra-config.lua;
+    };
 }

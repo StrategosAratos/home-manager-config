@@ -70,6 +70,7 @@ programs.git = {
 	userName = "StrategosAratos";
 	userEmail = "davidnikischer@gmail.com";
 };
+
   programs.emacs = {
     enable = true;
     package =

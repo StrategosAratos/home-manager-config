@@ -57,6 +57,7 @@
         touchpad.natural_scroll = false;
 
         sensitivity = 0; # -1.0 - 1.0, 0 means no modification.
+	numlock_by_default = true;
       };
 
       general = {

@@ -4,8 +4,6 @@
   home.packages = with pkgs; [
     brave
     cava
-    nixd
-    cli-visualizer
     dex
     discord
     element-desktop-wayland
@@ -17,18 +15,22 @@
     hyprpaper
     keepassxc
     kitty
+    nixd
     nixfmt-rfc-style
     pcmanfm
     pulseaudio
     ripgrep
     rustup
-    shellcheck
+    steam
+    sumneko-lua-language-server
     thunderbird
     trilium-desktop
     typescript
+    unzip
     vlc
     vorta
     waybar
+    wl-clipboard-rs
     wofi
     yarn
     zsh
