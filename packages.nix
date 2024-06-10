@@ -3,14 +3,18 @@
 {
   home.packages = with pkgs; [
     brave
+    calibre
     cava
     dex
     discord
     element-desktop-wayland
+    espanso-wayland
     evince
     fd
+    gimp-with-plugins
     git
     grimblast
+    handbrake
     helvum
     hyprpaper
     keepassxc
@@ -21,18 +25,25 @@
     pulseaudio
     ripgrep
     rustup
+    signal-desktop
     steam
     sumneko-lua-language-server
     thunderbird
     trilium-desktop
     typescript
     unzip
+    veracrypt
     vlc
     vorta
     waybar
     wl-clipboard-rs
     wofi
+    wxmaxima
     yarn
+    zathura
     zsh
+    firefox-devedition
+    vscodium
+
   ];
 }

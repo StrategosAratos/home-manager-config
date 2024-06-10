@@ -665,7 +665,6 @@ require('lazy').setup({
         sources = {
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
-          { name = 'async_path' },
         },
       }
     end,
