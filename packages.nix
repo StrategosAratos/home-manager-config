@@ -44,6 +44,7 @@
     zsh
     firefox-devedition
     vscodium
+    neovim-qt
 
   ];
 }

@@ -25,25 +25,28 @@
       "$terminal" = "kitty";
       "$menu" = "wofi --show drun,run";
       "$dmenu" = "wofi --show dmenu";
-      "$fileManager" = "pcmanfm";
-      "$notes" = "obsidian";
+      "$fileManager" = "thunar";
+      "$notes" = "trilium";
       "$chat" = "element-desktop";
-      "$editor" = "emacs";
+      "$editor" = "kitty nvim";
       "$browser" = "brave";
 
       exec-once = ["dex -a" "hyprpaper" "waybar" ];
 
       monitor = [
-                  "DP-3,1920x1080@60,0x0,1"
-                  "DP-2,1920x1080@60,1920x0,1"
-                  "DP-1,1920x1080@60,3840x0,1"
+                  "DP-1,1920x1080@120,0x0,1"
+                  #"HDMI-A-1,1920x1080@50,1920x0,1,disable"
+                  "HDMI-A-1,disable"
                 ];
 
       windowrulev2 = [
         "opacity 0.96, class:.*" # make all windows 4% transparent
         "opacity 1,title:^(.*)(YouTube)(.*)$" # if a window has "YouTube" in its title, remove transparency
         "opacity 1,title:^FINAL FANTASY XIV$"
+        "opacity 1,class:firefox"
         #"nomaximizerequest, class:.*" # You'll probably like this.
+        "suppressevent maximize, class:.*"
+        "forceinput, class:.*"
         "minsize 1 1 , title:^(),class:^(steam)"
         "stayfocused,class:(steam),title:(^$)"
       ];
